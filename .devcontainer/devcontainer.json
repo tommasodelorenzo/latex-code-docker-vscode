@@ -1,0 +1,82 @@
+{
+    "name": "latex_docs",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "vscode",
+    "runServices": [
+        "vscode"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "",
+    "overrideCommand": true,
+    "extensions": [
+        "james-yu.latex-workshop",
+        // Other helpers
+        "shardulm94.trailing-spaces",
+        "stkb.rewrap", // rewrap comments after n characters on one line
+        // Other
+        "vscode-icons-team.vscode-icons",
+    ],
+    "settings": {
+        // General settings
+        "files.eol": "\n",
+        // Latex settings
+        "latex-workshop.chktex.enabled": true,
+        "latex-workshop.latex.clean.subfolder.enabled": true,
+        "latex-workshop.latex.autoClean.run": "onBuilt",
+        "latex-workshop.latex.outDir": "./",
+        "editor.formatOnSave": false,
+        "files.associations": {
+            "*.tex": "latex"
+        },
+        "latex-workshop.latexindent.args": [
+            "-c",
+            "%DIR%/",
+            "%TMPFILE%",
+            "-y=\"defaultIndent: '%INDENT%',onlyOneBackUp: 1\"",
+        ],
+        "latex-workshop.latex.recipe.default":"lastUsed",
+        "latex-workshop.latex.tools": [
+            {
+                "name": "pdflatex",
+                "command": "pdflatex",
+                "args": [
+                    "--shell-escape",
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOC%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "pythontex",
+                "command": "pythontex",
+                "args": ["%DOCFILE%"],
+                "env": {}
+            }
+        ],
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "pythontex",
+                "tools": [
+                    "pdflatex",
+                    // "bibtex",
+                    "pdflatex",
+                    "pythontex",
+                    "pdflatex"
+                ]
+            }
+        ]
+    }
+}
