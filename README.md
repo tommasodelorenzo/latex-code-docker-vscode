@@ -20,7 +20,7 @@ For a brief intro to `Latex` see [this link](https://it.overleaf.com/learn/latex
 
 ### Useful packages
 
-As per 14 March 2022, `Latex Dev Container` installs the full version of [`Tex Live 2021`](https://tug.org/texlive/) containing almost every package you would need. To add additional packages, just add them in `./devcontainer/Dockerfile` below `RUN tlmgr install` and run `rebuild container`.
+As per December 2022, `Latex Dev Container` installs the full version of [`Tex Live 2021`](https://tug.org/texlive/) containing almost every package you would need. To add additional packages, just add them in `./devcontainer/Dockerfile` below `RUN tlmgr install` and run `rebuild container`.
 
 Here is a list of additional packages already present in the Dockerfile.
 
