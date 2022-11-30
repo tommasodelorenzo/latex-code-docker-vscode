@@ -1,4 +1,4 @@
-# Environment to write Latex documentation with interactive code using Docker and VSCode
+# Write Latex documentation with interactive code using Docker and VSCode
 
 A Docker container for [`Latex`](https://www.latex-project.org/) in `VSCode`. The base image is [Latex Dev Container](https://github.com/qdm12/latexdevcontainer).
 
